@@ -28,7 +28,7 @@
 #include <ibrcommon/thread/MutexLock.h>
 #include <ibrcommon/thread/Queue.h>
 #include <ibrcommon/thread/Thread.h>
-#include <ibrcommon/thread/Semaphore.h>
+#include <ibrcommon/thread/mSemaphore.h>
 #include <memory>
 
 #ifndef DATASTORAGE_H_

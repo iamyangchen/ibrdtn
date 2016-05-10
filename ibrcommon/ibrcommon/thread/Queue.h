@@ -25,7 +25,7 @@
 #include "ibrcommon/thread/MutexLock.h"
 #include "ibrcommon/thread/Conditional.h"
 #include "ibrcommon/Exceptions.h"
-#include "ibrcommon/thread/Semaphore.h"
+#include "ibrcommon/thread/mSemaphore.h"
 #include "ibrcommon/thread/Thread.h"
 #include <queue>
 #include <iostream>

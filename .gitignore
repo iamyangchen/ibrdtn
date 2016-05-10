@@ -1,0 +1,3 @@
+**/*.DS_Store
+android/app/src/main/jni/androgenizer/
+android/app/src/main/src/

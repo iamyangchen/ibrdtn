@@ -25,7 +25,7 @@
 #include "ibrcommon/thread/Mutex.h"
 #include "ibrcommon/thread/MutexLock.h"
 #include "ibrcommon/data/File.h"
-#include "ibrcommon/thread/Semaphore.h"
+#include "ibrcommon/thread/mSemaphore.h"
 #include "ibrcommon/refcnt_ptr.h"
 #include <iostream>
 #include <sstream>

@@ -1,5 +1,5 @@
 /*
- * Semaphore.cpp
+ * Semaphore.h
  *
  * Copyright (C) 2011 IBR, TU Braunschweig
  *
@@ -19,46 +19,36 @@
  *
  */
 
-#include "ibrcommon/config.h"
-#include "ibrcommon/thread/Semaphore.h"
-#include <iostream>
+#ifndef IBRCOMMON_SEMAPHORE_H_
+#define IBRCOMMON_SEMAPHORE_H_
 
-using namespace std;
+#include "ibrcommon/thread/Mutex.h"
+#include <sys/types.h>
+
+#include <semaphore.h>
+
+#ifdef HAVE_SYS_SEMAPHORE_H
+#include <sys/semaphore.h>
+#else
+#include <semaphore.h>
+#endif
 
 namespace ibrcommon
 {
-	Semaphore::Semaphore(unsigned int value)
+	class Semaphore : public MutexInterface
 	{
-		sem_init(&count_sem, 0, value);
-	}
+		public:
+			Semaphore(unsigned int value = 0);
+			virtual ~Semaphore();
 
-	Semaphore::~Semaphore()
-	{
-		sem_destroy(&count_sem);
-	}
+			void wait();
+			void post();
 
-	void Semaphore::wait()
-	{
-		sem_wait(&count_sem);
-	}
-
-	void Semaphore::post()
-	{
-		sem_post(&count_sem);
-	}
-
-	void Semaphore::trylock() throw (MutexException)
-	{
-		throw MutexException("trylock is not available for semaphores");
-	}
-
-	void Semaphore::enter() throw (MutexException)
-	{
-		wait();
-	}
-
-	void Semaphore::leave() throw (MutexException)
-	{
-		post();
-	}
+			void trylock() throw (MutexException);
+			void enter() throw (MutexException);
+			void leave() throw (MutexException);
+		private:
+			sem_t count_sem;
+	};
 }
+#endif /*SEMAPHORE_H_*/
