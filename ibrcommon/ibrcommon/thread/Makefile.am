@@ -4,7 +4,7 @@ h_sources = \
 	Conditional.h \
 	Queue.h Mutex.h \
 	MutexLock.h \
-	Semaphore.h \
+	mSemaphore.h \
 	Thread.h \
 	Timer.h \
 	AtomicCounter.h \
@@ -19,7 +19,7 @@ cc_sources = \
 	Conditional.cpp \
 	Mutex.cpp \
 	MutexLock.cpp \
-	Semaphore.cpp \
+	mSemaphore.cpp \
 	Thread.cpp \
 	Timer.cpp \
 	AtomicCounter.cpp \

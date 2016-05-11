@@ -1,3 +1,6 @@
 **/*.DS_Store
 android/app/src/main/jni/androgenizer/
 android/app/src/main/src/
+ibrdtn/tools/compile
+ibrdtn/tools/no/
+ibrdtn/tools/src/streaming/.dirstamp
