@@ -41,3 +41,4 @@ Android.mk: Makefile.am
 		-:REL_TOP $(top_srcdir) -:ABS_TOP $(abs_top_srcdir) \
 		-:SUBDIR $(SUBDIRS) \
 		> $@
+
