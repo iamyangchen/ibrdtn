@@ -2,6 +2,7 @@
 #
 
 export PATH=$PATH:"/Users/chen/.android-sdk/ndk-bundle"
+export PATH=$PATH:"/home/chen/Android/Sdk/ndk-bundle"
 
 OPENSSL_COMMIT="01e473f0a6320fafec82e3cc015bb2653879ef51"
 LIBNL_COMMIT="7e32da396adfe6b58b23641dacb1887f5855ff9c"
