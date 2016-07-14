@@ -5,3 +5,8 @@ ibrdtn/tools/compile
 ibrdtn/tools/no/
 ibrdtn/tools/src/streaming/.dirstamp
 ibrdtn/doxygen/
+
+ibrcommon/compile
+ibrcommon/test-driver
+
+ibrdtn/compile
