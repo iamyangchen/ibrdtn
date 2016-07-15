@@ -10,6 +10,13 @@ ibrcommon/compile
 ibrcommon/test-driver
 ibrdtn/compile
 
+bundles/
+ibrdtn/CMakeLists.txt
+ibrdtn.log
+
+**/*.dirstamp
+
+
 # Xcode
 .DS_Store
 **/build/
