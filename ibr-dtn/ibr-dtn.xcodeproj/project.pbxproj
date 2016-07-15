@@ -768,6 +768,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		743441C61D37297C0097C1E4 /* ibrdtnd.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ibrdtnd.conf; sourceTree = "<group>"; };
 		749C679A1D3195C800F7DF2F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		749C67A21D31966400F7DF2F /* appstreambuf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = appstreambuf.h; path = ../ibrcommon/ibrcommon/appstreambuf.h; sourceTree = "<group>"; };
 		749C67A31D31966400F7DF2F /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = ../ibrcommon/ibrcommon/config.h; sourceTree = "<group>"; };
@@ -2174,6 +2175,7 @@
 		749C6DD61D31BAC200F7DF2F /* dtndaemon */ = {
 			isa = PBXGroup;
 			children = (
+				743441C61D37297C0097C1E4 /* ibrdtnd.conf */,
 				749C6DD71D31BAC200F7DF2F /* main.cpp */,
 			);
 			path = dtndaemon;
@@ -4117,6 +4119,7 @@
 				749C686A1D319A3800F7DF2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		749C68801D319D4C00F7DF2F /* Build configuration list for PBXNativeTarget "ibrcommon_link" */ = {
 			isa = XCConfigurationList;
@@ -4125,6 +4128,7 @@
 				749C68821D319D4C00F7DF2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		749C68961D319EB300F7DF2F /* Build configuration list for PBXNativeTarget "ibrcommon_net" */ = {
 			isa = XCConfigurationList;
@@ -4133,6 +4137,7 @@
 				749C68981D319EB300F7DF2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		749C689E1D319EDD00F7DF2F /* Build configuration list for PBXNativeTarget "ibrcommon_thread" */ = {
 			isa = XCConfigurationList;
@@ -4141,6 +4146,7 @@
 				749C68A01D319EDD00F7DF2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		749C68CF1D31A80100F7DF2F /* Build configuration list for PBXNativeTarget "ibrcommon" */ = {
 			isa = XCConfigurationList;
@@ -4149,6 +4155,7 @@
 				749C68D11D31A80100F7DF2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		749C69BD1D31AA4300F7DF2F /* Build configuration list for PBXNativeTarget "api" */ = {
 			isa = XCConfigurationList;
@@ -4157,6 +4164,7 @@
 				749C69BF1D31AA4300F7DF2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		749C69CC1D31AB6900F7DF2F /* Build configuration list for PBXNativeTarget "data" */ = {
 			isa = XCConfigurationList;
@@ -4165,6 +4173,7 @@
 				749C69CE1D31AB6900F7DF2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		749C6A381D31AEDD00F7DF2F /* Build configuration list for PBXNativeTarget "streams" */ = {
 			isa = XCConfigurationList;
@@ -4173,6 +4182,7 @@
 				749C6A3A1D31AEDD00F7DF2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		749C6A4A1D31AF4800F7DF2F /* Build configuration list for PBXNativeTarget "utils" */ = {
 			isa = XCConfigurationList;
@@ -4181,6 +4191,7 @@
 				749C6A4C1D31AF4800F7DF2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		749C6A5B1D31AF9100F7DF2F /* Build configuration list for PBXNativeTarget "ibrdtn" */ = {
 			isa = XCConfigurationList;
@@ -4189,6 +4200,7 @@
 				749C6A5D1D31AF9100F7DF2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		749C6C731D31B37D00F7DF2F /* Build configuration list for PBXNativeTarget "daemon_api" */ = {
 			isa = XCConfigurationList;
@@ -4197,6 +4209,7 @@
 				749C6C751D31B37D00F7DF2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		749C6CA01D31B4F300F7DF2F /* Build configuration list for PBXNativeTarget "daemon_corefilter" */ = {
 			isa = XCConfigurationList;
@@ -4205,6 +4218,7 @@
 				749C6CA21D31B4F300F7DF2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		749C6CAF1D31B55100F7DF2F /* Build configuration list for PBXNativeTarget "daemon_core" */ = {
 			isa = XCConfigurationList;
@@ -4213,6 +4227,7 @@
 				749C6CB11D31B55100F7DF2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		749C6CE21D31B6D500F7DF2F /* Build configuration list for PBXNativeTarget "daemon_net" */ = {
 			isa = XCConfigurationList;
@@ -4221,6 +4236,7 @@
 				749C6CE41D31B6D500F7DF2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		749C6D2E1D31B78000F7DF2F /* Build configuration list for PBXNativeTarget "rtepidemic" */ = {
 			isa = XCConfigurationList;
@@ -4229,6 +4245,7 @@
 				749C6D301D31B78000F7DF2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		749C6D3B1D31B7EF00F7DF2F /* Build configuration list for PBXNativeTarget "rtflooding" */ = {
 			isa = XCConfigurationList;
@@ -4237,6 +4254,7 @@
 				749C6D3D1D31B7EF00F7DF2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		749C6D481D31B82900F7DF2F /* Build configuration list for PBXNativeTarget "rtprophet" */ = {
 			isa = XCConfigurationList;
@@ -4245,6 +4263,7 @@
 				749C6D4A1D31B82900F7DF2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		749C6D5B1D31B88E00F7DF2F /* Build configuration list for PBXNativeTarget "routing" */ = {
 			isa = XCConfigurationList;
@@ -4253,6 +4272,7 @@
 				749C6D5D1D31B88E00F7DF2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		749C6D8F1D31B91100F7DF2F /* Build configuration list for PBXNativeTarget "storage" */ = {
 			isa = XCConfigurationList;
@@ -4261,6 +4281,7 @@
 				749C6D911D31B91100F7DF2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		749C6DAA1D31B9C300F7DF2F /* Build configuration list for PBXNativeTarget "dtnd" */ = {
 			isa = XCConfigurationList;
@@ -4269,6 +4290,7 @@
 				749C6DAC1D31B9C300F7DF2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		749C6DD91D31BAC200F7DF2F /* Build configuration list for PBXNativeTarget "dtndaemon" */ = {
 			isa = XCConfigurationList;
@@ -4277,6 +4299,7 @@
 				749C6DDB1D31BAC200F7DF2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

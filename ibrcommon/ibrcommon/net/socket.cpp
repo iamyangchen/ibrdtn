@@ -1166,7 +1166,7 @@ namespace ibrcommon
 			mcast_op(IP_ADD_MEMBERSHIP, group, iface);
 		}
 #else
-		mcast_op(MCAST_JOIN_GROUP, group, iface);
+        mcast_op(MCAST_JOIN_GROUP, group, iface);
 #endif
 	}
 
