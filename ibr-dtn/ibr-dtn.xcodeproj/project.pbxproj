@@ -17,6 +17,8 @@
 		746052221D4072D4006321B7 /* ibrdtn_uiUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 746052211D4072D4006321B7 /* ibrdtn_uiUITests.m */; };
 		7460522D1D407E29006321B7 /* Endianess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 749C69651D31A9DC00F7DF2F /* Endianess.cpp */; };
 		7460522E1D407E3E006321B7 /* Endianess.h in Headers */ = {isa = PBXBuildFile; fileRef = 749C69451D31A9DC00F7DF2F /* Endianess.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		746052311D41CA32006321B7 /* daemon_init.mm in Sources */ = {isa = PBXBuildFile; fileRef = 746052301D41CA32006321B7 /* daemon_init.mm */; };
+		746052341D41CA9B006321B7 /* libdtnd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 749C6DA91D31B9C300F7DF2F /* libdtnd.a */; };
 		749C68731D319ABA00F7DF2F /* Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 749C67BD1D3196BE00F7DF2F /* Base64.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		749C68741D319ABA00F7DF2F /* Base64Reader.h in Headers */ = {isa = PBXBuildFile; fileRef = 749C67BE1D3196BE00F7DF2F /* Base64Reader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		749C68751D319ABA00F7DF2F /* Base64Stream.h in Headers */ = {isa = PBXBuildFile; fileRef = 749C67BF1D3196BE00F7DF2F /* Base64Stream.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -544,6 +546,13 @@
 			remoteGlobalIDString = 746051F91D4072D4006321B7;
 			remoteInfo = "ibrdtn-ui";
 		};
+		746052321D41CA85006321B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 749C678F1D3195C800F7DF2F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 749C6DA81D31B9C300F7DF2F;
+			remoteInfo = dtnd;
+		};
 		749C68E61D31A88F00F7DF2F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 749C678F1D3195C800F7DF2F /* Project object */;
@@ -807,6 +816,8 @@
 		7460521D1D4072D4006321B7 /* ibrdtn-uiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ibrdtn-uiUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		746052211D4072D4006321B7 /* ibrdtn_uiUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ibrdtn_uiUITests.m; sourceTree = "<group>"; };
 		746052231D4072D4006321B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		746052301D41CA32006321B7 /* daemon_init.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = daemon_init.mm; sourceTree = "<group>"; };
+		746052351D41CBBC006321B7 /* daemon_init.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = daemon_init.h; sourceTree = "<group>"; };
 		749C679A1D3195C800F7DF2F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		749C67A21D31966400F7DF2F /* appstreambuf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = appstreambuf.h; path = ../ibrcommon/ibrcommon/appstreambuf.h; sourceTree = "<group>"; };
 		749C67A31D31966400F7DF2F /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = ../ibrcommon/ibrcommon/config.h; sourceTree = "<group>"; };
@@ -1307,6 +1318,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				746052341D41CA9B006321B7 /* libdtnd.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1511,6 +1523,7 @@
 		746051FB1D4072D4006321B7 /* ibrdtn-ui */ = {
 			isa = PBXGroup;
 			children = (
+				7460522F1D41C9EE006321B7 /* native */,
 				746051FF1D4072D4006321B7 /* AppDelegate.h */,
 				746052001D4072D4006321B7 /* AppDelegate.m */,
 				746052021D4072D4006321B7 /* ViewController.h */,
@@ -1548,6 +1561,15 @@
 				746052231D4072D4006321B7 /* Info.plist */,
 			);
 			path = "ibrdtn-uiUITests";
+			sourceTree = "<group>";
+		};
+		7460522F1D41C9EE006321B7 /* native */ = {
+			isa = PBXGroup;
+			children = (
+				746052301D41CA32006321B7 /* daemon_init.mm */,
+				746052351D41CBBC006321B7 /* daemon_init.h */,
+			);
+			name = native;
 			sourceTree = "<group>";
 		};
 		749C678E1D3195C800F7DF2F = {
@@ -2755,6 +2777,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				746052331D41CA85006321B7 /* PBXTargetDependency */,
 			);
 			name = "ibrdtn-ui";
 			productName = "ibrdtn-ui";
@@ -3198,6 +3221,7 @@
 				TargetAttributes = {
 					746051F91D4072D4006321B7 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 3L2G3FM2K3;
 					};
 					746052111D4072D4006321B7 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -3348,6 +3372,7 @@
 				746052041D4072D4006321B7 /* ViewController.m in Sources */,
 				746052011D4072D4006321B7 /* AppDelegate.m in Sources */,
 				746051FE1D4072D4006321B7 /* main.m in Sources */,
+				746052311D41CA32006321B7 /* daemon_init.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3695,6 +3720,11 @@
 			target = 746051F91D4072D4006321B7 /* ibrdtn-ui */;
 			targetProxy = 7460521E1D4072D4006321B7 /* PBXContainerItemProxy */;
 		};
+		746052331D41CA85006321B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 749C6DA81D31B9C300F7DF2F /* dtnd */;
+			targetProxy = 746052321D41CA85006321B7 /* PBXContainerItemProxy */;
+		};
 		749C68E71D31A88F00F7DF2F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 749C68661D319A3800F7DF2F /* ibrcommon_data */;
@@ -3887,12 +3917,14 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "ibrdtn-ui/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cy.ibrdtn-ui";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -3902,12 +3934,14 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "ibrdtn-ui/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cy.ibrdtn-ui";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

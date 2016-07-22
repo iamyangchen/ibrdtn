@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "daemon_init.h"
+
 
 @interface AppDelegate ()
 
@@ -17,6 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    init_ibrdtn_daemon(1, NULL);
     return YES;
 }
 
