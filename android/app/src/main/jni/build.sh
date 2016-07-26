@@ -3,6 +3,7 @@
 
 export PATH=$PATH:"/Users/chen/.android-sdk/ndk-bundle"
 export PATH=$PATH:"/home/chen/Android/Sdk/ndk-bundle"
+export PATH="/Users/Chen/Library/Android/sdk/ndk-bundle":$PATH
 
 OPENSSL_COMMIT="01e473f0a6320fafec82e3cc015bb2653879ef51"
 LIBNL_COMMIT="7e32da396adfe6b58b23641dacb1887f5855ff9c"
@@ -24,10 +25,14 @@ if [ ! -e "$(which androgenizer)" ]; then
     cd androgenizer
     make
     cd ..
+  else
+    cd androgenizer
+    make
+    cd ..
   fi
 
   # Add androgenizer to path
-  export PATH=${PATH}:$(pwd)/androgenizer
+  export PATH=$PATH:$(pwd)/androgenizer
 fi
 
 echo ""
