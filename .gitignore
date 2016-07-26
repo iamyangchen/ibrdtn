@@ -18,6 +18,8 @@ ibrdtn/daemon/etc/ibrdtnd-platform.conf
 
 **/*.dirstamp
 
+# Sublime
+ibrdtn.sublime-workspace
 
 # Xcode
 .DS_Store
