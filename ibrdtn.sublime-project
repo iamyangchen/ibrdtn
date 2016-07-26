@@ -1,0 +1,88 @@
+{
+    "folders":
+    [
+        {
+            "name": "project",
+            "path": ".",
+            "folder_exclude_patterns": 
+            [
+                "blobs",
+                "bundles",
+                "docs",
+                "recipes",
+                "scripts"
+            ],
+            "file_exclude_patterns":
+            [
+                "install-sh",
+                "*.yml"
+            ]
+        },
+
+        {
+            "name": "ibrdtn",
+            "path": "./ibrdtn/ibrdtn/ibrdtn",
+            "folder_exclude_patterns": 
+            [
+                ".deps",
+                ".libs",
+            ],
+            "file_include_patterns":
+            [
+                "*.h",
+                "*.cpp",
+                "Makefile.am"
+            ]
+        },
+
+        {
+            "name": "ibrcommon",
+            "path": "./ibrcommon/ibrcommon",
+            "folder_exclude_patterns": 
+            [
+                ".deps",
+                ".libs",
+            ],
+            "file_include_patterns":
+            [
+                "*.h",
+                "*.cpp",
+                "Makefile.am"
+            ]
+        },
+
+        {
+            "name": "daemon",
+            "path": "./ibrdtn/daemon/src",
+            "folder_exclude_patterns": 
+            [
+                ".deps",
+                ".libs",
+            ],
+            "file_include_patterns":
+            [
+                "*.h",
+                "*.cpp",
+                "Makefile.am"
+            ]
+        },
+
+        {
+            "name": "tools",
+            "path": "./ibrdtn/tools/src",
+            "folder_exclude_patterns": 
+            [
+                ".deps",
+                ".libs",
+            ],
+            "file_include_patterns":
+            [
+                "*.h",
+                "*.cpp",
+                "Makefile.am"
+            ]
+        }
+    ],
+
+    "tab_size": 2,
+}
