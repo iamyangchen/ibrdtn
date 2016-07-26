@@ -84,5 +84,17 @@
         }
     ],
 
-    "tab_size": 2,
+    "settings":
+    {
+        "tab_size": 2
+    },
+
+    "build_systems":
+    [
+        {
+            "name": "cmdIbrdtn",
+            "working_dir": "$project_path/ibrdtn",
+            "cmd": ["make"]
+        }
+    ]
 }
