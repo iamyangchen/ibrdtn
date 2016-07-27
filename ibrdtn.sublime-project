@@ -10,7 +10,11 @@
                 "bundles",
                 "docs",
                 "recipes",
-                "scripts"
+                "scripts",
+                "ibrcommon/ibrcommon",
+                "ibrdtn/daemon/src",
+                "ibrdtn/ibrdtn/ibrdtn",
+                "ibrdtn/tools/src"
             ],
             "file_exclude_patterns":
             [
@@ -86,7 +90,8 @@
 
     "settings":
     {
-        "tab_size": 2
+        "tab_size": 2,
+        "font_size": 9
     },
 
     "build_systems":
