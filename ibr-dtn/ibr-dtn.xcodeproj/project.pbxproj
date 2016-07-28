@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		746051FE1D4072D4006321B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 746051FD1D4072D4006321B7 /* main.m */; };
 		746052011D4072D4006321B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 746052001D4072D4006321B7 /* AppDelegate.m */; };
-		746052041D4072D4006321B7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 746052031D4072D4006321B7 /* ViewController.m */; };
 		746052071D4072D4006321B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 746052051D4072D4006321B7 /* Main.storyboard */; };
 		746052091D4072D4006321B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 746052081D4072D4006321B7 /* Assets.xcassets */; };
 		7460520C1D4072D4006321B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7460520A1D4072D4006321B7 /* LaunchScreen.storyboard */; };
@@ -19,6 +18,9 @@
 		7460522E1D407E3E006321B7 /* Endianess.h in Headers */ = {isa = PBXBuildFile; fileRef = 749C69451D31A9DC00F7DF2F /* Endianess.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		746052311D41CA32006321B7 /* daemon_init.mm in Sources */ = {isa = PBXBuildFile; fileRef = 746052301D41CA32006321B7 /* daemon_init.mm */; };
 		746052341D41CA9B006321B7 /* libdtnd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 749C6DA91D31B9C300F7DF2F /* libdtnd.a */; };
+		7487FB811D498BB600A2405B /* AddToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7487FB801D498BB600A2405B /* AddToDoViewController.m */; };
+		7487FB841D498C9A00A2405B /* ToDoListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7487FB831D498C9A00A2405B /* ToDoListTableViewController.m */; };
+		7487FB871D49A77F00A2405B /* ToDoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7487FB861D49A77F00A2405B /* ToDoItem.m */; };
 		749C68731D319ABA00F7DF2F /* Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 749C67BD1D3196BE00F7DF2F /* Base64.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		749C68741D319ABA00F7DF2F /* Base64Reader.h in Headers */ = {isa = PBXBuildFile; fileRef = 749C67BE1D3196BE00F7DF2F /* Base64Reader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		749C68751D319ABA00F7DF2F /* Base64Stream.h in Headers */ = {isa = PBXBuildFile; fileRef = 749C67BF1D3196BE00F7DF2F /* Base64Stream.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -804,8 +806,6 @@
 		746051FD1D4072D4006321B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		746051FF1D4072D4006321B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		746052001D4072D4006321B7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		746052021D4072D4006321B7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		746052031D4072D4006321B7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		746052061D4072D4006321B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		746052081D4072D4006321B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7460520B1D4072D4006321B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -818,6 +818,12 @@
 		746052231D4072D4006321B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		746052301D41CA32006321B7 /* daemon_init.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = daemon_init.mm; sourceTree = "<group>"; };
 		746052351D41CBBC006321B7 /* daemon_init.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = daemon_init.h; sourceTree = "<group>"; };
+		7487FB7F1D498BB600A2405B /* AddToDoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddToDoViewController.h; sourceTree = "<group>"; };
+		7487FB801D498BB600A2405B /* AddToDoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddToDoViewController.m; sourceTree = "<group>"; };
+		7487FB821D498C9A00A2405B /* ToDoListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoListTableViewController.h; sourceTree = "<group>"; };
+		7487FB831D498C9A00A2405B /* ToDoListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoListTableViewController.m; sourceTree = "<group>"; };
+		7487FB851D49A77F00A2405B /* ToDoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoItem.h; sourceTree = "<group>"; };
+		7487FB861D49A77F00A2405B /* ToDoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoItem.m; sourceTree = "<group>"; };
 		749C679A1D3195C800F7DF2F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		749C67A21D31966400F7DF2F /* appstreambuf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = appstreambuf.h; path = ../ibrcommon/ibrcommon/appstreambuf.h; sourceTree = "<group>"; };
 		749C67A31D31966400F7DF2F /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = ../ibrcommon/ibrcommon/config.h; sourceTree = "<group>"; };
@@ -1526,13 +1532,17 @@
 				7460522F1D41C9EE006321B7 /* native */,
 				746051FF1D4072D4006321B7 /* AppDelegate.h */,
 				746052001D4072D4006321B7 /* AppDelegate.m */,
-				746052021D4072D4006321B7 /* ViewController.h */,
-				746052031D4072D4006321B7 /* ViewController.m */,
 				746052051D4072D4006321B7 /* Main.storyboard */,
+				7487FB851D49A77F00A2405B /* ToDoItem.h */,
+				7487FB861D49A77F00A2405B /* ToDoItem.m */,
+				7487FB821D498C9A00A2405B /* ToDoListTableViewController.h */,
+				7487FB831D498C9A00A2405B /* ToDoListTableViewController.m */,
 				746052081D4072D4006321B7 /* Assets.xcassets */,
 				7460520A1D4072D4006321B7 /* LaunchScreen.storyboard */,
 				7460520D1D4072D4006321B7 /* Info.plist */,
 				746051FC1D4072D4006321B7 /* Supporting Files */,
+				7487FB7F1D498BB600A2405B /* AddToDoViewController.h */,
+				7487FB801D498BB600A2405B /* AddToDoViewController.m */,
 			);
 			path = "ibrdtn-ui";
 			sourceTree = "<group>";
@@ -3369,9 +3379,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				746052041D4072D4006321B7 /* ViewController.m in Sources */,
+				7487FB871D49A77F00A2405B /* ToDoItem.m in Sources */,
+				7487FB811D498BB600A2405B /* AddToDoViewController.m in Sources */,
 				746052011D4072D4006321B7 /* AppDelegate.m in Sources */,
 				746051FE1D4072D4006321B7 /* main.m in Sources */,
+				7487FB841D498C9A00A2405B /* ToDoListTableViewController.m in Sources */,
 				746052311D41CA32006321B7 /* daemon_init.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4518,6 +4530,7 @@
 				746052251D4072D4006321B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7460522B1D4072D4006321B7 /* Build configuration list for PBXNativeTarget "ibrdtn-uiTests" */ = {
 			isa = XCConfigurationList;
@@ -4526,6 +4539,7 @@
 				746052271D4072D4006321B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7460522C1D4072D4006321B7 /* Build configuration list for PBXNativeTarget "ibrdtn-uiUITests" */ = {
 			isa = XCConfigurationList;
@@ -4534,6 +4548,7 @@
 				746052291D4072D4006321B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		749C67921D3195C800F7DF2F /* Build configuration list for PBXProject "ibr-dtn" */ = {
 			isa = XCConfigurationList;
