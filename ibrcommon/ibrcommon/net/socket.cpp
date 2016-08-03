@@ -1371,6 +1371,9 @@ namespace ibrcommon
 
 		case ELOOP:
 			throw socket_exception("Too many symbolic links were encountered in resolving the given address.");
+                
+        case EADDRINUSE:
+            throw socket_exception("Address already in use.");
 
 		default:
 			throw socket_exception("Cannot bind to socket " + msg);

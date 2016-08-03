@@ -87,10 +87,13 @@ namespace ibrcommon
 				const ibrcommon::vinterface &iface = (*iface_iter);
 
 				// get current addresses from LinkManager
-				std::list<vaddress> addr_new = _lmgr.getAddressList(iface);
+				std::list<vaddress> _addr_new = _lmgr.getAddressList(iface);
 
 				// sort all new addresses
-				addr_new.sort();
+				//addr_new.sort();
+                
+                addr_set addr_new(_addr_new.begin(), _addr_new.end());
+                
 
 				// check if there exists an address set for this interface
 				if (_addr_map.find(iface) == _addr_map.end()) {
@@ -100,6 +103,7 @@ namespace ibrcommon
 
 				// get the address set of last known addresses
 				addr_set &addr_old = _addr_map[iface];
+
 
 				// create a set for address differences
 				std::list<vaddress> addr_diff;
