@@ -6,8 +6,12 @@
 //  Copyright © 2016 Chen Yang. All rights reserved.
 //
 
-#import "ToDoListTableViewController.h"
+#import "IbrDtnSettingsTableViewController.h"
 #import "ToDoItem.h"
+#import "IbrDtnSettingItem.h"
+#import "AddToDoViewController.h"
+
+#include "daemon_init.h"
 
 
 #include <sys/types.h>
@@ -22,19 +26,30 @@
 #define IP_ADDR_IPv4    @"ipv4"
 #define IP_ADDR_IPv6    @"ipv6"
 
+#define SETTING_DEVICE_NAME 0
+#define SETTING_NET     1
 
-@interface ToDoListTableViewController ()
+
+@interface IbrDtnSettingsTableViewController ()
 
 // Private variable
-@property NSMutableArray *toDoItems;
+@property NSMutableArray *toDoItems1;
+@property NSMutableArray  *toDoItems2;
+
+@property NSMutableArray *settings;
 
 @end
 
-@implementation ToDoListTableViewController
+@implementation IbrDtnSettingsTableViewController
 
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue{
-    
+  AddToDoViewController *source = [segue sourceViewController];
+  ToDoItem *item = source.toDoItem;
+  if (item != nil){
+    [self.toDoItems1 addObject:item];
+    [self.tableView reloadData];
+  }
     
 }
 
@@ -47,13 +62,66 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.toDoItems = [[NSMutableArray alloc] init];
-    [self loadInitialData];
+  self.settings = [[NSMutableArray alloc] init];
+  [self loadInitialData];
+  
+    /*
+    char *para[6];
+    char prog[] = "test";
+    char p1[] = "-i";
+    char p2[] = "en0";
+    char p3[] = "-v";
+    char p4[] = "-d";
+    char p5[] = "5";
+    para[0] = prog;
+    para[1] = p1;
+    para[2] = p2;
+    para[3] = p3;
+    para[4] = p4;
+    para[5] = p5;
+    
+    init_ibrdtn_daemon(4, para);
+     */
+}
+
+- (void) loadInitialData {
+  
+  NSMutableArray *device_name_settings = [[NSMutableArray alloc] init];
+  NSMutableArray *net_settings = [[NSMutableArray alloc] init];
+  
+  IbrDtnSettingItem *eid = [[IbrDtnSettingItem alloc] init];
+  eid.key = @"local_uri";
+  eid.value = @"dtn://Chen-iPhone.dtn";
+  eid.displayName = [[NSString alloc] initWithString:eid.value];
+  eid.displaySubName =[[NSString alloc] initWithString:eid.value];
+  
+  [device_name_settings addObject:eid];
+  
+  
+  NSMutableSet *ifaceSet = [self loadIfaceData];
+  NSInteger ifacecnt = 0;
+  for (NSString *iface in ifaceSet){
+    IbrDtnSettingItem *item = [[IbrDtnSettingItem alloc] init];
+    NSMutableString *ckey = [[NSMutableString alloc] initWithString:@"lan"];
+    [ckey appendString:[NSString stringWithFormat:@"%d", ifacecnt]];
+    item.key = [[NSString alloc] initWithString:ckey];
+    item.value = [[NSString alloc] initWithString:iface];
+    item.displayName = [[NSString alloc] initWithString:item.value];
+    [net_settings addObject:item];
+  }
+  
+  [self.settings addObject:device_name_settings];
+  [self.settings addObject:net_settings];
+  
+
 }
 
 // Self defined method for loading data
-- (void)loadInitialData {
-    
+- (NSMutableSet *)loadIfaceData {
+  
+  NSMutableSet *ifaceList = [[NSMutableSet alloc] init];
+  
+  
     struct ifaddrs *ifap = NULL;
     int status = getifaddrs(&ifap);
     int i=0;
@@ -99,16 +167,11 @@
                 }
             }
             if(type) {
-                NSString *key = [NSString stringWithFormat:@"%@/%@", name, type];
-                
-                ToDoItem *item = [[ToDoItem alloc] init];
-                item.itemName = [[NSString alloc] initWithString:name];
-                item.ip = [NSString stringWithUTF8String: addrBuf];
-                [self.toDoItems addObject:item];
+              [ifaceList addObject:name];
             }
         }
     }
-    
+  return ifaceList;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -119,24 +182,28 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.toDoItems count];
+  return [self.settings[section] count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+  if(section == SETTING_DEVICE_NAME)
+    return @"General";
+  else
+    return @"Network";
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListPrototypeCell" forIndexPath:indexPath];
+  
+  IbrDtnSettingItem *item = self.settings[indexPath.section][indexPath.row];
     
-    ToDoItem *toDoItem = [self.toDoItems objectAtIndex:indexPath.row];
-    NSMutableString *toDisplay = [[NSMutableString alloc] init];
-    [toDisplay appendString:toDoItem.itemName];
-    [toDisplay appendString:@","];
-    [toDisplay appendString:toDoItem.ip];
-    
-    
+  NSMutableString *toDisplay = [[NSMutableString alloc] initWithString:item.displayName];
+  
     cell.textLabel.text = toDisplay;
     
     return cell;
@@ -184,6 +251,16 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+}
+*/
+
+/*
+#pragma mark - Table view delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  [tableView deselectRowAtIndexPath:indexPath animated:NO];
+  ToDoItem *item = [self.toDoItems1 objectAtIndex:indexPath.row];
+  item.completed = !item.completed;
+  [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:NO];
 }
 */
 

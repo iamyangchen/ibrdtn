@@ -6,17 +6,17 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--To Do List-->
+        <!--IBR-DTN iOS-->
         <scene sceneID="RFy-C7-QVd">
             <objects>
-                <tableViewController id="TOs-6O-OcA" customClass="ToDoListTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="04Z-j9-qKn">
+                <tableViewController id="TOs-6O-OcA" customClass="IbrDtnSettingsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="04Z-j9-qKn">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ListPrototypeCell" id="IOg-Zp-vFa">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="114" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IOg-Zp-vFa" id="3eh-d3-qq8">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -29,7 +29,7 @@
                             <outlet property="delegate" destination="TOs-6O-OcA" id="VIC-zp-n4n"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="To Do List" id="AVY-ZO-34D">
+                    <navigationItem key="navigationItem" title="IBR-DTN iOS" id="AVY-ZO-34D">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qs4-my-rG9">
                             <connections>
                                 <segue destination="eOQ-4m-uYF" kind="presentation" id="Shy-iJ-hNT"/>
@@ -79,6 +79,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="saveButton" destination="Ohv-A5-snn" id="UUf-JY-w4k"/>
+                        <outlet property="textField" destination="oIz-45-zpo" id="DAR-Gj-SeQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="VW2-7h-xid" userLabel="Exit" sceneMemberID="exit"/>

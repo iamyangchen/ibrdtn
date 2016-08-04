@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		743A3E031D52CFD60053AB38 /* IbrDtnSettingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 743A3E021D52CFD60053AB38 /* IbrDtnSettingItem.m */; };
 		746051FE1D4072D4006321B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 746051FD1D4072D4006321B7 /* main.m */; };
 		746052011D4072D4006321B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 746052001D4072D4006321B7 /* AppDelegate.m */; };
 		746052071D4072D4006321B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 746052051D4072D4006321B7 /* Main.storyboard */; };
@@ -19,7 +20,7 @@
 		746052311D41CA32006321B7 /* daemon_init.mm in Sources */ = {isa = PBXBuildFile; fileRef = 746052301D41CA32006321B7 /* daemon_init.mm */; };
 		746052341D41CA9B006321B7 /* libdtnd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 749C6DA91D31B9C300F7DF2F /* libdtnd.a */; };
 		7487FB811D498BB600A2405B /* AddToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7487FB801D498BB600A2405B /* AddToDoViewController.m */; };
-		7487FB841D498C9A00A2405B /* ToDoListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7487FB831D498C9A00A2405B /* ToDoListTableViewController.m */; };
+		7487FB841D498C9A00A2405B /* IbrDtnSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7487FB831D498C9A00A2405B /* IbrDtnSettingsTableViewController.m */; };
 		7487FB871D49A77F00A2405B /* ToDoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7487FB861D49A77F00A2405B /* ToDoItem.m */; };
 		749C68731D319ABA00F7DF2F /* Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 749C67BD1D3196BE00F7DF2F /* Base64.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		749C68741D319ABA00F7DF2F /* Base64Reader.h in Headers */ = {isa = PBXBuildFile; fileRef = 749C67BE1D3196BE00F7DF2F /* Base64Reader.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -802,6 +803,8 @@
 
 /* Begin PBXFileReference section */
 		743441C61D37297C0097C1E4 /* ibrdtnd.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ibrdtnd.conf; sourceTree = "<group>"; };
+		743A3E011D52CFD60053AB38 /* IbrDtnSettingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IbrDtnSettingItem.h; sourceTree = "<group>"; };
+		743A3E021D52CFD60053AB38 /* IbrDtnSettingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IbrDtnSettingItem.m; sourceTree = "<group>"; };
 		746051FA1D4072D4006321B7 /* ibrdtn-ui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ibrdtn-ui.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		746051FD1D4072D4006321B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		746051FF1D4072D4006321B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -820,8 +823,8 @@
 		746052351D41CBBC006321B7 /* daemon_init.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = daemon_init.h; sourceTree = "<group>"; };
 		7487FB7F1D498BB600A2405B /* AddToDoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddToDoViewController.h; sourceTree = "<group>"; };
 		7487FB801D498BB600A2405B /* AddToDoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddToDoViewController.m; sourceTree = "<group>"; };
-		7487FB821D498C9A00A2405B /* ToDoListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoListTableViewController.h; sourceTree = "<group>"; };
-		7487FB831D498C9A00A2405B /* ToDoListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoListTableViewController.m; sourceTree = "<group>"; };
+		7487FB821D498C9A00A2405B /* IbrDtnSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IbrDtnSettingsTableViewController.h; sourceTree = "<group>"; };
+		7487FB831D498C9A00A2405B /* IbrDtnSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IbrDtnSettingsTableViewController.m; sourceTree = "<group>"; };
 		7487FB851D49A77F00A2405B /* ToDoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoItem.h; sourceTree = "<group>"; };
 		7487FB861D49A77F00A2405B /* ToDoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoItem.m; sourceTree = "<group>"; };
 		749C679A1D3195C800F7DF2F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -1535,14 +1538,16 @@
 				746052051D4072D4006321B7 /* Main.storyboard */,
 				7487FB851D49A77F00A2405B /* ToDoItem.h */,
 				7487FB861D49A77F00A2405B /* ToDoItem.m */,
-				7487FB821D498C9A00A2405B /* ToDoListTableViewController.h */,
-				7487FB831D498C9A00A2405B /* ToDoListTableViewController.m */,
+				7487FB821D498C9A00A2405B /* IbrDtnSettingsTableViewController.h */,
+				7487FB831D498C9A00A2405B /* IbrDtnSettingsTableViewController.m */,
 				746052081D4072D4006321B7 /* Assets.xcassets */,
 				7460520A1D4072D4006321B7 /* LaunchScreen.storyboard */,
 				7460520D1D4072D4006321B7 /* Info.plist */,
 				746051FC1D4072D4006321B7 /* Supporting Files */,
 				7487FB7F1D498BB600A2405B /* AddToDoViewController.h */,
 				7487FB801D498BB600A2405B /* AddToDoViewController.m */,
+				743A3E011D52CFD60053AB38 /* IbrDtnSettingItem.h */,
+				743A3E021D52CFD60053AB38 /* IbrDtnSettingItem.m */,
 			);
 			path = "ibrdtn-ui";
 			sourceTree = "<group>";
@@ -3383,7 +3388,8 @@
 				7487FB811D498BB600A2405B /* AddToDoViewController.m in Sources */,
 				746052011D4072D4006321B7 /* AppDelegate.m in Sources */,
 				746051FE1D4072D4006321B7 /* main.m in Sources */,
-				7487FB841D498C9A00A2405B /* ToDoListTableViewController.m in Sources */,
+				7487FB841D498C9A00A2405B /* IbrDtnSettingsTableViewController.m in Sources */,
+				743A3E031D52CFD60053AB38 /* IbrDtnSettingItem.m in Sources */,
 				746052311D41CA32006321B7 /* daemon_init.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
