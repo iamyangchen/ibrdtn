@@ -13,7 +13,10 @@
 extern "C" {
 #endif
 
-int init_ibrdtn_daemon(int argc, char *argv[]);
+  int init_ibrdtn_daemon(int argc, char *argv[]);
+  int init_daemon_thread();
+  int shutdown_daemon();
+  int revoke_daemon();
     
 #ifdef __cplusplus
 };

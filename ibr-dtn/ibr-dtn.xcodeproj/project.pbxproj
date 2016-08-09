@@ -4070,6 +4070,7 @@
 					../ibrdtn/ibrcommon,
 					../ibrdtn/ibrdtn,
 					../ibrdtn/daemon/src,
+					../../ibrdtn/daemon/src,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -4113,6 +4114,7 @@
 					../ibrdtn/ibrcommon,
 					../ibrdtn/ibrdtn,
 					../ibrdtn/daemon/src,
+					../../ibrdtn/daemon/src,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;

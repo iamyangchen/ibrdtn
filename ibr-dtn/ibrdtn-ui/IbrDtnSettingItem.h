@@ -11,7 +11,6 @@
 @interface IbrDtnSettingItem : NSObject
 
 @property NSString *displayName;
-@property NSString *displaySubName;
 @property NSString *key;
 @property NSString *value;
 @property NSMutableArray *nextLevel;

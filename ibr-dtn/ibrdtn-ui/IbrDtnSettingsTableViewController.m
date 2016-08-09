@@ -26,8 +26,8 @@
 #define IP_ADDR_IPv4    @"ipv4"
 #define IP_ADDR_IPv6    @"ipv6"
 
-#define SETTING_DEVICE_NAME 0
-#define SETTING_NET     1
+#define SETTING_DAEMON      0
+#define SETTING_NET         1
 
 
 @interface IbrDtnSettingsTableViewController ()
@@ -53,6 +53,20 @@
     
 }
 
+- (void) daemonStateChangedBySwitch:(id)sender {
+  UISwitch *switchControl = sender;
+  NSLog( @"The switch is %@", switchControl.on ? @"ON" : @"OFF" );
+  
+  // If it's turned on, start the daemon
+  if (switchControl.on){
+    // init_daemon_thread();
+    revoke_daemon();
+  } else {
+  // else, turn off the daemon
+    shutdown_daemon();
+  }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -64,7 +78,7 @@
     
   self.settings = [[NSMutableArray alloc] init];
   [self loadInitialData];
-  
+  init_daemon_thread();
     /*
     char *para[6];
     char prog[] = "test";
@@ -86,16 +100,21 @@
 
 - (void) loadInitialData {
   
-  NSMutableArray *device_name_settings = [[NSMutableArray alloc] init];
+  
+  NSMutableArray *daemon_settings = [[NSMutableArray alloc] init];
   NSMutableArray *net_settings = [[NSMutableArray alloc] init];
+  
+  IbrDtnSettingItem *enabled = [[IbrDtnSettingItem alloc] init];
+  enabled.key = @"enabled";
+  enabled.value = @"true";
+  enabled.displayName = @"Device Enabled";
+  [daemon_settings addObject:enabled];
   
   IbrDtnSettingItem *eid = [[IbrDtnSettingItem alloc] init];
   eid.key = @"local_uri";
   eid.value = @"dtn://Chen-iPhone.dtn";
   eid.displayName = [[NSString alloc] initWithString:eid.value];
-  eid.displaySubName =[[NSString alloc] initWithString:eid.value];
-  
-  [device_name_settings addObject:eid];
+  [daemon_settings addObject:eid];
   
   
   NSMutableSet *ifaceSet = [self loadIfaceData];
@@ -110,7 +129,7 @@
     [net_settings addObject:item];
   }
   
-  [self.settings addObject:device_name_settings];
+  [self.settings addObject:daemon_settings];
   [self.settings addObject:net_settings];
   
 
@@ -182,7 +201,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+  return [self.settings count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -190,23 +209,39 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-  if(section == SETTING_DEVICE_NAME)
-    return @"General";
-  else
-    return @"Network";
+  switch (section) {
+    case SETTING_DAEMON:
+      return @"Daemon";
+    case SETTING_NET:
+      return @"Network";
+    default:
+      break;
+  }
+  return @"Unknown Section";
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListPrototypeCell" forIndexPath:indexPath];
   
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListPrototypeCell" forIndexPath:indexPath];
+  NSMutableString *toDisplay;
+
   IbrDtnSettingItem *item = self.settings[indexPath.section][indexPath.row];
-    
-  NSMutableString *toDisplay = [[NSMutableString alloc] initWithString:item.displayName];
+  toDisplay = [[NSMutableString alloc] initWithString:item.displayName];
+  cell.textLabel.text = toDisplay;
   
-    cell.textLabel.text = toDisplay;
-    
-    return cell;
+  cell.selectionStyle = UITableViewCellSelectionStyleNone;
+  
+  // Add switch to "Device Enabled" setting
+  if ([toDisplay isEqualToString:@"Device Enabled"]){
+    UISwitch *switchView = [[UISwitch alloc] initWithFrame:CGRectZero];
+    cell.accessoryView = switchView;
+    bool daemonOn = [item.value isEqualToString:@"true"];
+    [switchView setOn:daemonOn animated:NO];
+    [switchView addTarget:self action:@selector(daemonStateChangedBySwitch:) forControlEvents:UIControlEventValueChanged];
+  }
+  
+  return cell;
 }
 
 

@@ -24,6 +24,7 @@
 #include <ibrcommon/Logger.h>
 #include <ibrcommon/data/File.h>
 #include <ibrcommon/thread/SignalHandler.h>
+#include <core/BundleCore.h>
 
 #ifdef HAVE_LIBDAEMON
 #include <libdaemon/daemon.h>
@@ -337,4 +338,52 @@ int init_ibrdtn_daemon(int argc, char *argv[])
 #ifdef HAVE_LIBDAEMON
 	}
 #endif
+}
+
+void* daemon_thread_routine(void *arg){
+  
+   char *para[6];
+   char prog[] = "test";
+   char p1[] = "-i";
+   char p2[] = "en0";
+   char p3[] = "-v";
+   char p4[] = "-d";
+   char p5[] = "5";
+   para[0] = prog;
+   para[1] = p1;
+   para[2] = p2;
+   para[3] = p3;
+   para[4] = p4;
+   para[5] = p5;
+  
+  IBRCOMMON_LOGGER_TAG("daemon_thread_routine", info) << "daemon_thread_routine entered" << IBRCOMMON_LOGGER_ENDL;
+   
+  if ( 0 == init_ibrdtn_daemon(6, para) ){
+    IBRCOMMON_LOGGER_TAG("daemon_thread_routine", info) << "init_ibrdtn_daemon exit cleanly " << IBRCOMMON_LOGGER_ENDL;
+  } else {
+    IBRCOMMON_LOGGER_TAG("daemon_thread_routine", info) << "init_ibrdtn_daemon exit with non-zero code " << IBRCOMMON_LOGGER_ENDL;
+  }
+   
+  return NULL;
+}
+
+int init_daemon_thread(){
+  IBRCOMMON_LOGGER_TAG("init_daemon_thread", info) << "init_daemon_thread entered" << IBRCOMMON_LOGGER_ENDL;
+  pthread_t mthread;
+  pthread_create(&mthread, NULL, daemon_thread_routine, NULL);
+  
+  IBRCOMMON_LOGGER_TAG("init_daemon_thread", info) << "thread created" << IBRCOMMON_LOGGER_ENDL;
+  return 0;
+}
+
+int shutdown_daemon(){
+  
+  _dtnd.init(dtn::daemon::RUNLEVEL_CORE);
+  return 0;
+}
+
+int revoke_daemon(){
+  _dtnd.init(dtn::daemon::RUNLEVEL_ROUTING_EXTENSIONS);
+  
+  return 0;
 }
