@@ -11,3 +11,7 @@
 @implementation IbrDtnSettingItem
 
 @end
+
+@implementation IbrDtnSettingUISwitch
+
+@end

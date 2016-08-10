@@ -54,7 +54,7 @@
 }
 
 - (void) daemonStateChangedBySwitch:(id)sender {
-  UISwitch *switchControl = sender;
+  IbrDtnSettingUISwitch *switchControl = sender;
   NSLog( @"The switch is %@", switchControl.on ? @"ON" : @"OFF" );
   
   // If it's turned on, start the daemon
@@ -64,6 +64,17 @@
   } else {
   // else, turn off the daemon
     shutdown_daemon();
+  }
+}
+
+- (void) ifaceStateChangedBySwitch:(id)sender {
+  IbrDtnSettingUISwitch *switchControl = sender;
+  IbrDtnSettingItem *item = switchControl.setting_item;
+  IbrDtnSettingItem *enabled_net = [item.nextLevel objectAtIndex:0];
+  if (switchControl.on){
+    enabled_net.value = @"true";
+  } else {
+    enabled_net.value = @"false";
   }
 }
 
@@ -122,10 +133,25 @@
   for (NSString *iface in ifaceSet){
     IbrDtnSettingItem *item = [[IbrDtnSettingItem alloc] init];
     NSMutableString *ckey = [[NSMutableString alloc] initWithString:@"lan"];
-    [ckey appendString:[NSString stringWithFormat:@"%d", ifacecnt]];
+    [ckey appendString:[NSString stringWithFormat:@"%ld", (long)ifacecnt]];
     item.key = [[NSString alloc] initWithString:ckey];
     item.value = [[NSString alloc] initWithString:iface];
-    item.displayName = [[NSString alloc] initWithString:item.value];
+    item.nextLevel = [[NSMutableArray alloc] init];
+    
+    IbrDtnSettingItem *enabled_net = [[IbrDtnSettingItem alloc] init];
+    enabled_net.key = @"enabled";
+    enabled_net.value = @"false";
+    enabled_net.displayName = @"Enabled";
+    [item.nextLevel addObject:enabled_net];
+    if ([item.value isEqualToString:@"pdp_ip0"]){
+      item.displayName = @"Cellular";
+    }
+    else if ([item.value isEqualToString:@"en0"])
+      item.displayName = @"WiFi";
+    else
+      item.displayName = [[NSString alloc] initWithString:iface];
+    
+    ifacecnt = ifacecnt + 1;
     [net_settings addObject:item];
   }
   
@@ -232,13 +258,25 @@
   
   cell.selectionStyle = UITableViewCellSelectionStyleNone;
   
+  // Check if we need to attach a UISwitch
+  IbrDtnSettingUISwitch *switchView = [[IbrDtnSettingUISwitch alloc] initWithFrame:CGRectZero];
+  if ([toDisplay isEqualToString:@"Device Enabled"] ||
+      indexPath.section == SETTING_NET)
+    cell.accessoryView = switchView;
+
+  
   // Add switch to "Device Enabled" setting
   if ([toDisplay isEqualToString:@"Device Enabled"]){
-    UISwitch *switchView = [[UISwitch alloc] initWithFrame:CGRectZero];
-    cell.accessoryView = switchView;
     bool daemonOn = [item.value isEqualToString:@"true"];
+    switchView.setting_item = item;
     [switchView setOn:daemonOn animated:NO];
     [switchView addTarget:self action:@selector(daemonStateChangedBySwitch:) forControlEvents:UIControlEventValueChanged];
+  } else if (indexPath.section == SETTING_NET) {
+    IbrDtnSettingItem *enabled_net = [item.nextLevel objectAtIndex:0];
+    bool ifaceOn = [enabled_net.value isEqualToString:@"true"];
+    switchView.setting_item = item;
+    [switchView setOn:ifaceOn animated:NO];
+    [switchView addTarget:self action:@selector(ifaceStateChangedBySwitch:) forControlEvents:UIControlEventValueChanged];
   }
   
   return cell;

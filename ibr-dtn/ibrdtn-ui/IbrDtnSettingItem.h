@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface IbrDtnSettingItem : NSObject
 
@@ -15,4 +16,8 @@
 @property NSString *value;
 @property NSMutableArray *nextLevel;
 
+@end
+
+@interface IbrDtnSettingUISwitch : UISwitch
+@property IbrDtnSettingItem *setting_item;
 @end
