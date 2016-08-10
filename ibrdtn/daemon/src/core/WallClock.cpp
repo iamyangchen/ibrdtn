@@ -35,6 +35,8 @@ namespace dtn
 
 		WallClock::~WallClock()
 		{
+      _timer.stop();
+      _timer.join();
 		}
 
 		void WallClock::sync()
