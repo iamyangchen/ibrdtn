@@ -15,6 +15,7 @@ ibrdtn/CMakeLists.txt
 ibrdtn.log
 
 ibrdtn/daemon/etc/ibrdtnd-platform.conf
+*.tar.gz
 
 **/*.dirstamp
 
