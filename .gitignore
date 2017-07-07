@@ -14,6 +14,8 @@ bundles/
 ibrdtn/CMakeLists.txt
 ibrdtn.log
 
+*.tar.gz
+
 ibrdtn/daemon/etc/ibrdtnd-platform.conf
 
 **/*.dirstamp
