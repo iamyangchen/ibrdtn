@@ -1308,12 +1308,14 @@ namespace ibrcommon
     // setsockopt to specify the index on which to send the multicast packet on.
     // See this link:
     // http://stackoverflow.com/questions/1264948/link-scope-ipv6-multicast-packets-suddenly-not-routable-on-a-macbook-pro
+    #ifdef __APPLE__
     uint32_t ifindex;
     ifindex = iface.getIndex();
     if (group.family() == AF_INET6)
       __compat_setsockopt(this->fd(), IPPROTO_IPV6, IPV6_MULTICAST_IF, &ifindex, sizeof(ifindex));
     else if (group.family() == AF_INET)
       __compat_setsockopt(this->fd(), IPPROTO_IPV4, IP_MULTICAST_IF, &ifindex, sizeof(ifindex));
+    #endif
 
 		// successful!
 		IBRCOMMON_LOGGER_DEBUG_TAG("multicastsocket", 70) << "multicast operation (" << optname << ") successful with " << group.toString() << " on " << iface.toString() << IBRCOMMON_LOGGER_ENDL;
